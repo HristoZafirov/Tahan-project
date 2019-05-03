@@ -1,0 +1,128 @@
+@media only screen and (max-width: 1050px) {
+	nav{
+		width: 800px;
+		height: 50px;
+	}
+	nav .t-right {
+		margin-right: 6px;
+		font: 12.5px/50px 'Avanti', arial;
+	}
+	nav p.t-right::before {
+		width: 20px;
+		height: 30px;
+		top: 10px;
+		left: 30px;
+	}
+	nav div.col-60 ul li a {
+		font: 16px/50px 'Avanti', arial;
+	}
+	nav img {
+		width: 40px;
+		height: 40px;
+	}
+	/* LAYER 1 */
+
+	#layer-1 {
+		width: 800px;
+	}
+	.topbackground {
+		width: 800px;
+	}
+	/* LAYER 2 */
+
+	#layer-2 {
+		width: 800px;
+	}
+
+	/* LAYER 3 */
+
+	#layer-3 {
+		width: 800px;
+	}
+	#layer-3 .l3-bgbox {
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-o-border-radius: 0;
+		-moz-border-radius: 0;
+	}
+	#layer-3 .l3-bgbox .l3-borderbox {
+		border: 0;
+	}
+
+	/* LAYER 4 */
+
+	#layer-4 {
+		width: 800px;
+	}
+	#layer-4 .l4-container {
+		padding: 15px 70px;
+	}
+	#layer-4 .l4-container .l4-text p {
+		font-size: 16px;
+	}
+	#layer-4 .l4-container .l4-text h2 {
+		font-size: 30px;
+	}
+	#rightButtonProductSlider,
+	#leftButtonProductSlider {
+		width: 30px;
+		height: 30px;
+		margin-top: -15px;
+		right: 2.5%;
+	}
+	#leftButtonProductSlider {
+		right: 0;
+		left: 2.5%;
+	}
+	#layer-4 .l4-container img,
+	#layer-4 .l4-container img,
+	#layer-4 .l4-container img,
+	#layer-4 .l4-container img {
+		width: 160px;
+		height: 280px;
+	}
+
+	/* LAYER 5 */
+
+	#layer-5 {
+		width: 800px;
+	}
+	#layer-5 .l5-static-contacts {
+		padding-top: 25px;
+		font: 16px/150px 'Avanti';
+		margin-top: -60px;
+	}
+	#layer-5 .l5-static-contacts .col-20 {
+		margin-right: 75px;
+	}
+	#layer-5 .l5-static-contacts .col-20 img {
+		width: 125px;
+		height: 125px;
+	}
+	#layer-5 .questions {
+		padding: 25px 10px 10px 10px;
+	}
+	#layer-5 .questions p {
+		font-size: 27px;
+	}
+	#layer-5 .questions input[type="text"] {
+		width: 200px;
+		height: 30px;
+		font-size: 16px;
+	}
+	#layer-5 .questions textarea {
+		width: 320px;
+		padding: 10px;
+	}
+	#layer-5 .questions .botbg {
+
+	}
+	#layer-5 .questions input[type="submit"] {
+		width: 140px;
+		height: 30px;
+		margin: 10px auto;
+	}
+	footer {
+		margin-top: -12px;
+	}
+}

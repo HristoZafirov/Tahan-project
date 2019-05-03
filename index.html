@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Бориславски Сусамов Тахан</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/needs/grey logo.png" type="image/png" /> 
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link href="http://allfont.net/allfont.css?fonts=avanti" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+	$(document).ready(function (){
+            $("#l1").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#layer-1").offset().top
+                }, 1000);
+	            return false;
+            });
+            $("#l2").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#layer-2").offset().top
+                }, 1000);
+	            return false;
+            });
+            $("#l4").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#l4-scroll-pos").offset().top
+                }, 1000);
+	            return false;
+            });
+            $("#l5").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#layer-5").offset().top
+                }, 1000);
+	            return false;
+            });
+            /*	Спира refresh-a на страницата при Submit на формата за поръчка. */
+            $('#orderForm').submit(function () {
+					return false;
+				});
+				/*	Спира refresh-a на страницата при Submit на формата за въпроси. */
+            $('#questionForm').submit(function () {
+					return false;
+				});
+
+        });
+	</script>
+	
+</head>
+<body onload="emptyArea();">
+<div id="modal-box">
+<!--
+		ПРИ УСПЕШНА ПОРЪЧКА ИЗПОЛЗВАЙ ФУНКЦИЯ callModal(4,'success');
+		ПРИ НЕУСПЕШНА ПОРЪЧКА ФУНКЦИЯ callModal(4, 'failure');
+		ПРИ УСПЕШНО ИЗПРАТЕН ВЪПРОС callModal(4,'question');
+		ПРИ НЕУСПЕШНО ИЗПРАТЕН ВЪПРОС callModal(4,'question2');
+-->
+<!-- MODAL BOX - ЗА ПОРЪЧКА -->
+	<div id="modal-order">
+		<!-- БУТОН Х ЗА ЗАТВАРЯНЕ НА МОДАЛА (НЕ ПИПАЙ) -->
+		<span class="close" onclick="closeModal(1);">X</span>
+		<!-- ФОРМА ЗА ПОРЪЧКА -->
+		<form id="orderForm">
+			<img src="images/needs/yellowgreen logo.png" />
+			<p>поръчка</p>
+			<div class="col-40 right">
+				<!-- ПОЛЕ ЗА ИМЕ И ФАМИЛИЯ (ЗАДЪЛЖИТЕЛНО)-->
+			<input  class="required" type="text" name="" placeholder="Име и фамилия" /> <i>*</i>
+				<!-- ПОЛЕ ЗА ТЕЛЕФОНЕН НОМЕР (ЗАДЪЛЖИТЕЛНО)-->
+			<input class="required" type="text" name="" placeholder="Телефон" /> <i>*</i>
+				<!-- ПОЛЕ ЗА АДРЕС (ЗАДЪЛЖИТЕЛНО)-->
+			<input class="required" type="text" name="" placeholder="Адрес" /> <i>*</i>
+				<!-- ПОЛЕ ЗА Е-МЕЙЛ АДРЕС -->
+			<input type="text" name="" placeholder="Е-мейл адрес" />
+				<!-- ПОЛЕ ЗА ДОПЪЛНИТЕЛНА ИНФОРМАЦИЯ -->
+			<textarea placeholder="Допълнително информация"></textarea>
+			
+			</div>
+			<div class="col-50 left">
+				<h2>Вашите продукти</h2>
+				<div class="hoverProduct">
+					<img src="images/needs/tahan.png" />
+					<p>Количество</p>
+					<h2 onclick="plus(1);" class="btn right">
+						+
+					</h2>
+					<!-- ИНДЕКС(КОЛИЧЕСТВО) КОЛКО КАФЯВ ТАХАН ПОРЪЧВА КЛИЕНТА -->
+					<h2 id="kafqv" class="right">
+						0
+					</h2>
+					<h2 onclick="minus(1);" class="btn left">
+						-
+					</h2>
+					<div class="clear"></div>
+				</div>
+				<div class="hoverProduct">
+					<img src="images/needs/tahan.png" />	
+					<p>Количество</p>
+					<h2 onclick="plus(2);" class="btn right">
+						+
+					</h2>
+					<!-- ИНДЕКС(КОЛИЧЕСТВО) КОЛКО БЯЛ ТАХАН ПОРЪЧВА КЛИЕНТА -->
+					<h2 id="bql" class="right">
+						0
+					</h2>
+					<h2 onclick="minus(2);" class="btn left">
+						-
+					</h2>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!-- БУТОН ПОРЪЧАЙ (ФИНАЛИЗИРАНЕ НА ПОРЪЧКАТА)
+			(успешен по подразбиране) -->
+			<input onclick="closeModal(1); callModal(4,'success');" type="submit" name="" value="ПОРЪЧАЙ" />
+		</form>
+	</div>
+
+
+
+</div>	
+<div id="modal-box2">
+	<div id="modal-info">
+		<span class="close" onclick="closeModal(2);">X</span>
+		<h2 id="tahan-info-heading">
+			<!-- header -->
+		</h2>
+		<div class="wrapper">
+			<p id="tahan-info-p1">
+				<!-- text -->
+			</p>
+			<img id="tahan-info-img1" src="images/needs/grey text 	divider.png" />
+			<p id="tahan-info-p2">
+				<!-- text -->
+			</p>
+			<img id="tahan-info-img2" src="images/needs/grey text 	divider.png" />
+			<p id="tahan-info-p3">
+				<!-- text -->
+			</p>
+		</div>
+	</div>
+</div>
+<div id="modal-box3">
+	<div id="modal-partners">
+		<span class="close" onclick="closeModal(3);">X</span>
+		<img class="right" src="images/needs/Partnership.png" />
+		<div class="left">
+			<h1>Партньори</h1>
+			<dl>
+				<dd>
+					<a href="#">Lorem ipsum</a>
+				</dd>
+				<dd>
+					<a href="#">Dolor sit amet</a>
+				</dd>
+				<dd>
+					<a href="#">consecretetur at</a>
+				</dd>
+				<dd>
+					<a href="#">comersee trung</a>
+				</dd>
+				<dd>
+					<a href="#">...</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+	<nav id="navbar">
+		<div class="col-20 right">
+			<p class="t-right">
+				+359/88 245 0423
+			</p>
+		</div>
+		<div class="col-60 right">
+			<ul>
+				<li><a id="l1" href="#">начало</a></li>
+				<li><a id="l2" href="#">кои сме ние</a></li>
+				<li><a id="l4" href="#">поръчка</a></li>
+				<li><a id="l5" href="#">контакти</a></li>
+			</ul>
+		</div>
+		<div class="col-20 left">
+			<a href="#">
+				<img src="images/needs/white logo.png" />
+			</a>
+		</div>
+		<div class="clear"></div>
+	</nav>
+
+	<div id="layer-1">
+		<img class="topbackground" src="images/needs/top background.jpg">
+		<div class="l1-wrapper">
+			<img class="logo" src="images/needs/white logo.png">
+			<h1>сусамов  <br />тахан от планината</h1>
+			<h2>с. БОРИСЛАВЦИ, сем. ЗАФИРОВИ</h2>
+			<img class="jars" src="images/needs/jars.png">
+			<input onclick="callModal(1);" type="button" name="order1" value="поръчка" />
+			<img class="leaf-divider" src="images/needs/white leaf divider.png">
+		</div>
+	</div>
+	<div id="layer-2">
+		<h2>кои сме  <i>ние</i></h2>
+		<div></div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<img src="images/needs/grey text divider.png" />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<img src="images/needs/grey text divider.png" />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div id="layer-3">
+		<div class="l3-bgbox">
+			<div class="l3-borderbox">
+				<p class="right">
+					<button onclick="callModal(3);" type="button">партньори</button>
+				</p>
+				<h2 class="left">къде ще ни откриете</h2>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="layer-4">
+		<div id="l4-scroll-pos"></div>
+
+		<div id="product0" class="l4-container">
+			<img class="right" src="images/needs/tahan.png" alt="български натурален тахан" />
+			<div class="l4-text left">
+			<h2>натурален <i>тахан</i></h2>
+				<p>	Lorem ipsum dolor sit amet, consectetur 			adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="product1" class="l4-container">
+			<img class="right" src="images/needs/tahan.png" alt="български натурален тахан" />
+			<div class="l4-text left">
+			<h2>натурален 2 <i>тахан</i></h2>
+				<p>	Lorem ipsum dolor sit amet, consectetur 			adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="product2" class="l4-container">
+			<img class="right" src="images/needs/tahan.png" alt="български натурален тахан" />
+			<div class="l4-text left">
+			<h2>натурален 3 <i>тахан</i></h2>
+				<p>	Lorem ipsum dolor sit amet, consectetur 			adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="product3" class="l4-container">
+			<img class="right" src="images/needs/tahan.png" alt="български натурален тахан" />
+			<div class="l4-text left">
+			<h2>натурален 4 <i>тахан</i></h2>
+				<p>	Lorem ipsum dolor sit amet, consectetur 			adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<img id="leftButtonProductSlider" onclick="addArrowAnimation(1);" src="images/needs/double arrow left.png" />
+		<img id="rightButtonProductSlider" onclick="addArrowAnimation(2);" src="images/needs/double arrow right.png" />
+	</div>
+
+	<div id="layer-5">
+		<img class="botbg" src="images/needs/bottom background2.jpg">
+		<div class="l5-static-contacts">
+			<div class="col-40 right">
+				<p class="mail">
+					tahan.borislavtsi@gmail.com
+				</p>
+			</div>
+			<div class="col-20 right">
+				<img src="images/needs/yellowgreen logo.png" />
+			</div>
+			<div class="col-40 left">
+				<p class="phone">
+					+359/88 245 0423
+				</p>
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+		<!-- ФОРМА ЗА ИЗПРАЩАНЕ НА ВЪПРОС -->
+		<form class="questions" id="questionForm">
+			<p><i>имате</i> въпроси?</p>
+			<!-- ПОЛЕ ЗА ИМЕНА (ЗАДЪЛЖИТЕЛНО) -->
+			<input type="text" name="names" placeholder="Име и фамилия" />
+			<!-- ПОЛЕ ЗА ТЕЛЕФОНЕН НОМЕР (ЗАДЪЛЖИТЕЛНО) -->
+			<input type="text" name="phone" placeholder="Телефон" />
+			<!-- ПОЛЕ ЗА ВЪПРОС (ЗАДЪЛЖИТЕЛНО) -->
+			<textarea id="txtarea" name="" placeholder="Вашият въпрос"></textarea>
+			<!-- БУТОН ЗА ИЗПРАЩАНЕ НА ВЪПРОСА (Успешен по подразбиране) -->
+			<input onclick="callModal(4,'success');" type="submit" name="send" value="ИЗПРАТИ" />
+		</form>
+	</div>
+	<footer>
+		<div class="col-30 right">
+			<a href="https://plus.google.com/discover" target="_blank">
+				<img class="right" src="images/needs/g+ icon.png" />
+			</a>
+			<a href="https://twitter.com/?lang=en" target="_blank">
+				<img class="twitter right" src="images/needs/twitter icon.png" />
+			</a>
+			<a href="https://www.facebook.com/" target="_blank">
+				<img class="right" src="images/needs/facebook icon.png" />
+			</a>
+			
+			
+			<div class="clear"></div>
+		</div>
+		<div class="col-70 left">
+			Всички права запазени БОРИСЛАВЦИ ТАХАН | Design by Christo Zafirov
+		</div>
+		<div class="clear"></div>
+	</footer>
+<div id="modal-box4">
+	<p id="modal-alert">
+		<span class="close" onclick="closeModal(4);">X</span>
+		Вашата поръчка беше успешна!
+	</p>
+</div>
+
+<script type="text/javascript" src="js/javascript.js"></script>
+</body>
+</html>
